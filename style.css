@@ -22,6 +22,10 @@ body {
     padding-top: 100px;
 }
 
+.image-host-tablet {
+    display: none;
+}
+
 .content-container {
     position: relative;
     width: 100%;
@@ -40,10 +44,6 @@ body {
     position: absolute;
     right: 0;
     bottom: -50px;
-}
-
-.image-host {
-
 }
 
 .publish-container {
@@ -94,12 +94,13 @@ body {
 }
 
 .input-and-button {
+    position: relative;
     display: flex;
     justify-content: space-between;
     max-width: 400px;
     background-color: #2C344B;
     border-radius: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 5px;
     padding-left: 30px;
     margin-bottom: 100px;
@@ -114,9 +115,79 @@ body {
     color: #121725;
     padding-left: 30px;
     padding-right: 30px;
+    transition: all .7s ease;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #B3FFE2;
+}
+
+.error-message {
+    position: absolute;
+    top: 65px;
+    z-index: 2;
+}
+
+.not-visible {
+    display: none;
+}
+
+.message {
+    color: #FB3E3E;
+    font-size: 12px;
+    font-weight: 600;
 }
 
 .logos-section {
     display: flex;
     justify-content: space-between;
 }
+
+/* ---------------Media queries-------------- */
+
+/* Tablet design */
+
+@media only screen and (max-width: 1000px) {
+
+    body {
+        max-height: fit-content;
+        overflow: scroll;
+        background-color: #121725;
+    }
+
+    .main-container {
+        padding-top: 0;
+        height: fit-content;
+        padding-bottom: 350px;
+    }
+
+    .logo {
+        top: 60px;
+        left: 30px;
+    }
+
+    .image-host-desktop {
+        display: none;
+    }
+    .image-host-tablet {
+        display: block;
+    }
+
+    .publish-container {
+        padding-left: 30px;
+        padding-right: 3px;
+        width: 90%;
+        top: 300px;
+    }
+
+    .title {
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    .dots {
+        left: 30px;
+        bottom: -350px;
+    }
+} 
